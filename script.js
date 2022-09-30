@@ -1,65 +1,61 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var ul = document.querySelector("ul");
-var li = document.querySelectorAll("li");
+const button = document.getElementById("enter");
+const input = document.getElementById("userinput");
+const ol = document.querySelector("ol");
+const li = document.querySelectorAll("li");
 
-// Adding Delete Button
-li.forEach(function(i) {
-  var deleteButton = document.createElement('BUTTON');
-  deleteButton.appendChild(document.createTextNode('Delete'));
+li.forEach((i) => {
+  const deleteButton = document.createElement("BUTTON");
+  deleteButton.appendChild(document.createTextNode("Delete"));
   i.appendChild(deleteButton);
 });
 
-function inputLength() {
-	return input.value.length;
-}
+const inputLength = () => {
+  return input.value.length;
+};
 
-// Addition - Added Delete Button along with new list
-function createListElement() {
-	var li = document.createElement("li");
-	var span = document.createElement("BUTTON");
-	li.appendChild(document.createTextNode(input.value));
-	span.appendChild(document.createTextNode("Delete"));
-	ul.appendChild(li);
-	li.appendChild(span);
-	input.value = "";
-}
+const createListElement = () => {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  const btn = document.createElement("BUTTON");
+  span.appendChild(document.createTextNode(input.value));
+  btn.appendChild(document.createTextNode("Delete"));
+  ol.appendChild(li);
+  li.appendChild(span);
+  li.appendChild(btn);
+  input.value = "";
+};
 
+const addListAfterClick = () => {
+  if (inputLength() > 0) {
+    createListElement();
+  }
+};
 
-function addListAfterClick() {
-	if (inputLength() > 0) {
-		createListElement();
-	}
-}
-
-function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
-	}
-}
+const addListAfterKeypress = (event) => {
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListElement();
+  }
+};
 
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-
-// Strike
-ul.addEventListener("click", (event) => {
-	const target = event.target;
-	if (target.matches("li")) {
-		target.classList.toggle("done");
-	}
+ol.addEventListener("click", (event) => {
+  const target = event.target;
+  console.log(`target:`, target);
+  if (target.matches("span")) {
+    target.classList.toggle("done");
+  }
 });
 
-// Delete Button
-ul.addEventListener("click", (event) => {
-	if(event.target.tagName === 'BUTTON') {
-		const button = event.target;
-		const li = button.parentNode;
-		const ul = li.parentNode;
-		if(button.textContent === 'Delete') {
-			ul.removeChild(li);
-		}
-	}
+ol.addEventListener("click", (event) => {
+  if (event.target.tagName === "BUTTON") {
+    const button = event.target;
+    const li = button.parentNode;
+    const ol = li.parentNode;
+    if (button.textContent === "Delete") {
+      ol.removeChild(li);
+    }
+  }
 });
-
