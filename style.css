@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 10px solid rgb(60, 144, 247);
+  border: 5px solid rgb(60, 144, 247);
   border-radius: 15px;
   margin-top: 2%;
   width: 20%;
@@ -58,8 +58,14 @@ span:hover {
 
 button,
 button:hover {
-  background-color: rgb(255, 210, 8);
+  background-color: #ff9494;
+  color: white;
+  font-weight: 600;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+#enter {
+  background-color: #90c8ac;
 }
