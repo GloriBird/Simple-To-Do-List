@@ -9,11 +9,13 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   border: 5px solid rgb(60, 144, 247);
   border-radius: 15px;
   margin-top: 2%;
   width: 20%;
+  overflow: hidden;
 }
 
 .wrapper {
