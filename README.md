@@ -15,7 +15,7 @@ A simple to do list to keep track of daily tasks, users are able to cross out, d
     <p>Select <code>index.html</code></p>
   </li>
    <li>
-    <p>On the bottom right corner of yours VSC, click on "Go Live" to launch the game.</p>
+    <p>On the bottom right corner of yours VSC, click on "Go Live".</p>
   </li>
 </ol> 
   
