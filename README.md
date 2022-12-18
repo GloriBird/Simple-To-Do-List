@@ -2,7 +2,7 @@
 
 A simple to do list to keep track of daily tasks, users are able to cross out, delete, and add as many tasks as needed.
 
-<strong>Tools used:</strong> <p>HTML, CSS, JavaScript</p>
+<p><strong>Tools used:</strong> HTML, CSS, JavaScript</p>
 
 <h3>Installation:</h3>
  <ol>
